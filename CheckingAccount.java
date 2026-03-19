@@ -78,7 +78,7 @@ public class CheckingAccount implements HasMenu, Serializable{
 	}
 
 	private double getDouble(){
-		Scanner input - new Scanner(System.in);
+		Scanner input =  new Scanner(System.in);
 		String restultString = input.nextLine();
 		double result = 0d;
 
@@ -87,16 +87,40 @@ public class CheckingAccount implements HasMenu, Serializable{
 		}
 
 		catch (Exception e){
-			System.out.pringln("Not a good value. Changing to 0");
+			System.out.println("Not a good value. Changing to 0");
+			result = 0d;
 		}
+
+		return result;
 	}
 
 	public void checkBalance(){
-		System.out.print("Current balance; ")
-		System.out.println(this.getBalanceString);
+		System.out.print("Current balance: ");
+		System.out.println(this.getBalanceString());
 	}
 
 	public void makeDeposit(){
-		
+		System.out.print("How much do you want to deposit? ");
+		double deposit = this.getDouble();
+		this.balance += deposit;
+		System.out.println("New balance; " + this.getBalanceString());
+	}
+
+	public void makeWithdrawl(){
+		System.out.print("How much do you want to withdrawl? ");
+		double withdrawl = this.getDouble();
+		if (withdrawl > this.balance){
+			System.out.println("Insufficent funds");
+		}
+
+		else{
+			if (withdrawl > 0){
+				this.balance -= withdrawl;
+			}
+			
+			else{
+				System.out.print("Please enter a positive value");
+			}
+		}
 	}
 }
