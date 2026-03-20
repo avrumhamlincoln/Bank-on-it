@@ -52,17 +52,13 @@ public abstract class User implements HasMenu, Serializable {
 	}
 
 	public void setPin(String pin){
-                boolean keepGoing = true;
-		while (keepGoing){
-
-			if (pin.matches("^\\d{4}$")){
-				this.pin = pin;
-				keepGoing = false;
-			}
+		if (pin.matches("^\\d{4}$")){
+			this.pin = pin;
+		}
 			
-			else{
-				System.out.print("Make sure your PIN is only four numbers. Try again.");
-			}
+		else {
+			System.out.print("Make sure your PIN is only four numbers. Setting PIN to 0000");
+			this.pin = "0000";
 		}
         }
 
