@@ -39,22 +39,22 @@ public class CheckingAccount implements HasMenu, Serializable{
 
 			if (choice.equals("0")) {
             			keepGoing = false;
-            			System.out.println("Exiting program ...");
+            			System.out.println("Going home ...");
         		}
 
 			else if (choice.equals("1")){
-            			System.out.println("Checking balance ... ");
+            			System.out.println("\nChecking balance ... ");
 				this.checkBalance();
         		}
 
 			else if (choice.equals("2")) {
-           			System.out.println("Making a deposit ... ");
+           			System.out.println("\nMaking a deposit ... ");
 				this.makeDeposit();
 
 			}
 
 			else if (choice.equals("3")) {
-                                System.out.println("Making a withdrawl ... ");
+                                System.out.println("\nMaking a withdrawl ... ");
 				this.makeWithdrawl();
 			}
 
@@ -95,19 +95,19 @@ public class CheckingAccount implements HasMenu, Serializable{
 	}
 
 	public void checkBalance(){
-		System.out.print("Current balance: ");
+		System.out.print("\nCurrent balance: ");
 		System.out.println(this.getBalanceString());
 	}
 
 	public void makeDeposit(){
-		System.out.print("How much do you want to deposit? ");
+		System.out.print("\nHow much do you want to deposit? ");
 		double deposit = this.getDouble();
 		this.balance += deposit;
 		System.out.println("New balance; " + this.getBalanceString());
 	}
 
 	public void makeWithdrawl(){
-		System.out.print("How much do you want to withdrawl? ");
+		System.out.print("\nHow much do you want to withdrawl? ");
 		double withdrawl = this.getDouble();
 		if (withdrawl > this.balance){
 			System.out.println("Insufficent funds");

@@ -9,7 +9,7 @@ public abstract class User implements HasMenu, Serializable {
 		Scanner input = new Scanner(System.in);
 		boolean result = false;
 
-		System.out.print("Username: ");
+		System.out.print("\nUsername: ");
 		String userNameIn = input.nextLine();
 
 		if (userNameIn.equals(this.userName)){
@@ -17,17 +17,17 @@ public abstract class User implements HasMenu, Serializable {
 			String pinIn = input.nextLine();
 
 			if (pinIn.equals(this.pin)){
-				System.out.println("Login Sucessful!");
+				System.out.println("\nLogin Sucessful!");
 				result = true;
 			}
 
 			else {
-				System.out.println("Incorrect PIN");
+				System.out.println("\nIncorrect PIN");
 			}
 		}
 
 		else {
-			System.out.println("Incorrect Username");
+			System.out.println("\nIncorrect Username");
 		}
 
 		return result;

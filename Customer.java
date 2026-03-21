@@ -13,7 +13,7 @@ public class Customer extends User implements Serializable{
 		}
 
 		else {
-			System.out.print("Error: Login unsuccessful :(");
+			System.out.print("\nError: Login unsuccessful :(");
 		}
 	}
 
@@ -31,7 +31,7 @@ public class Customer extends User implements Serializable{
 		boolean keepGoing = true;
 		String choice;
 
-		System.out.println("Welcome, " + getUserName() + "!");
+		System.out.println("\nWelcome, " + getUserName() + "!");
 		this.getReport();
 
 		while (keepGoing){
@@ -39,33 +39,33 @@ public class Customer extends User implements Serializable{
 
 			if (choice.equals("0")) {
             			keepGoing = false;
-            			System.out.println("Loging out ...");
+            			System.out.println("\nLoging out ...");
         		}
 
 			else if (choice.equals("1")){
-            			System.out.println("---Checking Account--- ");
+            			System.out.println("\n---Checking Account--- ");
 				checking.start();
         		}
 
 			else if (choice.equals("2")) {
-           			System.out.println("---Savings Account---");
+           			System.out.println("\n---Savings Account---");
 				savings.start();
 			}
 
 			else if (choice.equals("3")) {
-                                System.out.println("---Change PIN--- ");
+                                System.out.println("\n---Change PIN--- ");
 				changePin();
 			}
 
 			else {
-				System.out.println("Please enter a valid selection ");
+				System.out.println("\nPlease enter a valid selection ");
 			}
 		}
 	}
 
 	public String menu(){
 		Scanner input = new Scanner(System.in);
-		System.out.println("\nMENU");
+		System.out.println("\n---MENU---");
 		System.out.println("1: Manage Checking Account");
 		System.out.println("2: Manage Savings Account");
 		System.out.println("3: Change PIN");
@@ -78,7 +78,7 @@ public class Customer extends User implements Serializable{
 
 	public void changePin(){
 		Scanner input = new Scanner(System.in);
-		System.out.print("Enter your new PIN: ");
+		System.out.print("\nEnter your new PIN: ");
 		String newPin = input.nextLine();
 		super.setPin(newPin);
 		System.out.println("\nYour PIN has been updated.");
