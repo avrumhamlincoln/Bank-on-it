@@ -18,8 +18,8 @@ public class Customer extends User implements Serializable{
 	}
 
 	public Customer(){
-		this.setUserName("Avrum");
-		this.setPin("1111");
+		this.setUserName("Alice");
+		this.setPin("0000");
 	}
 
 	public Customer(String userName, String pin){

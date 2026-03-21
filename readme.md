@@ -76,7 +76,7 @@ SavingsAccount savings
     void main()
         creates a customer and starts login
     Customer()
-        sets initial username and pin (Avrum, 1111)
+        sets initial username and pin
     Customer(usernName, PIN)
         does the same but with the parameter
     void start()
