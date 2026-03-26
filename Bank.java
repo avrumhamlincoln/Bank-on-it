@@ -10,7 +10,7 @@ public class Bank implements HasMenu{
 	}
 
 	public Bank(){
-		this.loadSampleCustomers();
+		this.loadCustomers();
 		this.start();
 	}
 
@@ -35,6 +35,7 @@ public class Bank implements HasMenu{
 
 			if (choice.equals("0")) {
             			keepGoing = false;
+				this.saveCustomers();
             			System.out.println("\nExiting program ...");
         		}
 
@@ -96,11 +97,31 @@ public class Bank implements HasMenu{
 	}
 
 	public void saveCustomers(){
-	
+		try{
+			FileOutputStream fo = new FileOutputStream("Customers.dat");
+			ObjectOutputStream obOut = new ObjectOutputStream(fo);
+			obOut.writeObject(customers);
+			obOut.close();
+			fo.close();
+		}
+
+		catch (Exception e){
+			System.out.println(e.getMessage());
+		}
 	}
 
 	public void loadCustomers(){
-	
+		try{
+			FileInputStream fIn = new FileInputStream("Customers.dat");
+			ObjectInputStream obIn = new ObjectInputStream(fIn);
+			customers = (CustomerList) obIn.readObject();
+			obIn.close();
+			fIn.close();
+		}
+
+		catch (Exception e){
+                        System.out.println(e.getMessage());
+                }	
 	}
 
 	public void reportAllUsers(){

@@ -13,6 +13,12 @@ SavingsAccount.class: SavingsAccount.java CheckingAccount.class
 HasMenu.class: HasMenu.java
 	javac -g HasMenu.java
 
+Bank.class: Bank.java
+	javac -g Bank.java
+
+run: Bank.class
+	java Bank
+
 testAdmin: Admin.class
 	java Admin
 

@@ -4,6 +4,7 @@ import java.util.*;
 public abstract class User implements HasMenu, Serializable {
 	protected String userName;
     	protected String pin;
+	long serialVersionUID = 1L;
 
 	public boolean login(){
 		Scanner input = new Scanner(System.in);
