@@ -85,6 +85,6 @@ public class Customer extends User implements Serializable{
 	}
 
 	public String getReport() {
-		return "\nHere is your report ..."+ "\nChecking Account Balance: " + checking.getBalanceString() + "\nSavings Account Balance: " + savings.getBalanceString();
+		return "\n"+ getUserName() + "'s Report: "  + "\nChecking Account Balance: " + checking.getBalanceString() + "\nSavings Account Balance: " + savings.getBalanceString();
 	}
 }

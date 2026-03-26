@@ -88,3 +88,27 @@ SavingsAccount savings
     string getReport()
         returns balances for all accounts with formating
 ```
+
+#Admin() class extends User implements HasMenu, Serializable
+```
+    Admin()
+    string menu()
+    void start()
+    string getReport()
+```
+
+#Bank() class implements HasMenu
+```
+   Bank()
+    void main()
+    void loadSampleCustomers()
+    void saveCustomers()
+    void loadCustomers()
+    void reportAllUsers()
+    void addUser()
+    void applyInterest()
+    void loginAsCustomer()
+    string menu()
+    void start()
+    void startAdmin()
+```
