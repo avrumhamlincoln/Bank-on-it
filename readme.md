@@ -92,23 +92,42 @@ SavingsAccount savings
 #Admin() class extends User implements HasMenu, Serializable
 ```
     Admin()
+        sets userName and pin for admin user
     string menu()
+        prints the menu for admin
     void start()
+        will handle start in bank class
     string getReport()
+        returns the admin username and pin
 ```
 
 #Bank() class implements HasMenu
 ```
-   Bank()
+    Bank()
+        starts program
     void main()
+        loads customers
+        starts bank menu
     void loadSampleCustomers()
+        loads 3 sample customers for testing
     void saveCustomers()
+        saves customers in a .dat file
     void loadCustomers()
+        loads customers from the .dat file
     void reportAllUsers()
+        returns report for each customer
     void addUser()
+        adds a user to the customers array list
     void applyInterest()
+        applies the intrest method to each savings account
     void loginAsCustomer()
+        prompts username and pin
+        checks if a customer has the same unsername and pin
+        opens customer if the usermane and pin matches
     string menu()
+        prints the bank menu
     void start()
+        runs the bank menu options
     void startAdmin()
+        runs the admin menu options
 ```
